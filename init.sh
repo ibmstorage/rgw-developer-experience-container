@@ -3,7 +3,7 @@ set -e
 
 cat <<EOF > /usr/share/nginx/html/assets/env.js
 window.__env = {
-  ENDPOINT: "${ENDPOINT:-http://localhost:9080}",
+  ENDPOINT: "${ENDPOINT:-http://127.0.0.1:9080}",
   ACCESS_KEY: "${ACCESS_KEY:-zippy}",
   SECRET_KEY: "${SECRET_KEY:-zippy}",
   REGION: "${REGION:-default}",
@@ -37,7 +37,5 @@ function start_ceph_rgw_backend() {
 
 start_ceph_rgw_backend
 start_nginx_proxy_server
-
-echo "UI is running on http://localhost:8080"
 
 wait -n # keeping the container alive
