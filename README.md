@@ -1,6 +1,28 @@
-# IBM Ceph Object Storage Developer Edition with Object Browser
+# IBM Storage Ceph Object Developer Edition with Object Browser
 
 Here lies the containerfile for building the Object Storage Dev Edition.
+
+## Starting the developer edition locally
+
+```bash
+podman run -d \
+  --name dev-edition \
+  -p 8080:8081 \
+  -p 9080:9080 \
+  cp.stg.icr.io/cp/ibm-ceph/rgw-developer-experience-rhel10:v9.9.2
+```
+
+If you like to start with a different user than the default, then
+
+```bash
+podman run -d \
+  --name dev-edition \
+  -p 8080:8081 \
+  -p 9080:9080 \
+  -e ACCESS_KEY="accesskey" \
+  -e SECRET_KEY="secretkey" \
+  cp.stg.icr.io/cp/ibm-ceph/rgw-developer-experience-rhel10:v9.9.2
+```
 
 ## Building
 

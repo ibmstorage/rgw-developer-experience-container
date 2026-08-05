@@ -3,12 +3,12 @@ set -e
 
 cat <<EOF > /usr/share/nginx/html/assets/env.js
 window.__env = {
-  ENDPOINT: "${ENDPOINT:-http://127.0.0.1:9080}",
+  ENDPOINT: "${ENDPOINT}" || (window.location.protocol + "//" + window.location.hostname + ":9080"),
   ACCESS_KEY: "${ACCESS_KEY:-zippy}",
   SECRET_KEY: "${SECRET_KEY:-zippy}",
   REGION: "${REGION:-default}",
-  PRODUCT_NAME: "${PRODUCT_NAME:-Object Storage Developer Edition}",
-  PRODUCT_VERSION: "${PRODUCT_VERSION:-0.0.0}",
+  PRODUCT_NAME: "${PRODUCT_NAME:-Storage Ceph Object Developer Edition}",
+  PRODUCT_VERSION: "${PRODUCT_VERSION:-9.9.2.0}",
 };
 EOF
 
