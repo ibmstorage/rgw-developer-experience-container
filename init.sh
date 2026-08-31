@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+# Forward ACCESS_KEY/SECRET_KEY to the entrypoint.sh so that RGW
+# creates its user with the same credentials the UI is configured to use.
+export AWS_ACCESS_KEY_ID="${ACCESS_KEY:-zippy}"
+export AWS_SECRET_ACCESS_KEY="${SECRET_KEY:-zippy}"
+
 cat <<EOF > /usr/share/nginx/html/assets/env.js
 window.__env = {
   ENDPOINT: "${ENDPOINT}" || (window.location.protocol + "//" + window.location.hostname + ":9080"),
