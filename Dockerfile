@@ -1,5 +1,5 @@
-FROM cp.stg.icr.io/cp/ibm-ceph/object-browser:1.2.0 AS ui
-FROM cp.stg.icr.io/cp/ibm-ceph/rgw-standalone-rhel10:v9.9.2
+FROM preprod.icr.io/cp/ibm-ceph/object-browser:1.2.0 AS ui
+FROM preprod.icr.io/cpopen/ibm-ceph/rgw-standalone-rhel10:v9.9.2
 
 USER root
 
