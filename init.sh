@@ -13,7 +13,7 @@ window.__env = {
   SECRET_KEY: "${SECRET_KEY:-zippy}",
   REGION: "${REGION:-default}",
   PRODUCT_NAME: "${PRODUCT_NAME:-Storage Ceph Object Developer Edition}",
-  PRODUCT_VERSION: "${PRODUCT_VERSION:-9.9.2.0}",
+  PRODUCT_VERSION: "${PRODUCT_VERSION:-9.10.0}",
 };
 EOF
 
